@@ -1,0 +1,72 @@
+.h1 {
+  font-size: 60px;
+  color: #fccaff;
+  text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  text-decoration: double;
+  // text-align: left;
+  animation: blink 6s infinite;
+  -webkit-animation: blink 12s infinite;
+  // position: relative;
+  // height: 100%;
+  padding-bottom: 15px;
+  font-weight: 100;
+  margin-left: 140px;
+
+  // .body {
+  //   padding: 0;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: normal;
+  // }
+
+  @-webkit-keyframes blink {
+    20%,
+    24%,
+    55% {
+      color: #e7eef5;
+      text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      color: #fccaff;
+      text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+        0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    }
+  }
+
+  @keyframes blink {
+    20%,
+    24%,
+    55% {
+      color: #e7eef5;
+      text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      color: #e3dee7;
+      text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+        0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    }
+  }
+}
+.heartImage {
+  width: 1000px;
+  height: auto;
+
+  margin-left: 140px;
+}

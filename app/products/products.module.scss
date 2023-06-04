@@ -1,0 +1,31 @@
+.productsContainer {
+  display: grid;
+  padding-left: 25px;
+  padding-right: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 32px;
+  margin-top: 50px;
+}
+
+.productCard {
+  border-radius: 4px;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  border: 0.5px solid var(--primary-color);
+}
+
+.categoryTitle {
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
+  color: #7fffd4;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+}
