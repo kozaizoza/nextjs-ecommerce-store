@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../database/products';
+import { getProducts } from '../../database/products';
 import styles from './products.module.scss';
 
 export const metadata = {
@@ -8,7 +8,8 @@ export const metadata = {
   description: 'All products',
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await getProducts();
   return (
     <main className={styles.productsContainer}>
       {products.map((product) => {
@@ -23,6 +24,7 @@ export default function ProductsPage() {
             </Link>
             <br />
             <Image
+              alt=""
               src={`/images/${product.name}.jpg`}
               width={300}
               height={200}

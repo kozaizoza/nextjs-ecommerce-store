@@ -6,8 +6,8 @@ import style from './ProductPage.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-export default function ProductPage({ params }) {
-  const singleProduct = getProductById(Number(params.productId)); // Convert the string into a number
+export default async function ProductPage({ params }) {
+  const singleProduct = await getProductById(Number(params.productId)); // Convert the string into a number
 
   if (!singleProduct) {
     notFound();
@@ -17,6 +17,7 @@ export default function ProductPage({ params }) {
     <main>
       <div className={style.productLayout}>
         <Image
+          alt=""
           data-test-id="product-image"
           src={`/images/${singleProduct.name}.jpg`}
           width={400}

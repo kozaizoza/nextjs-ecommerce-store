@@ -9,7 +9,11 @@ export default function HomePage() {
     <main>
       <h1 className={styles.h1}>The Blossom Collective</h1>
       <div>
-        <Image className={styles.heartImage} src={background} />
+        <Image
+          alt="studio-photo"
+          className={styles.heartImage}
+          src={background}
+        />
       </div>
     </main>
   );
