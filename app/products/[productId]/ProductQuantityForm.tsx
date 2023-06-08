@@ -3,10 +3,11 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { updateQuantity } from './actions';
 
-// import styles from './FruitCommentForm.module.scss';
-
-export default function ProductQuantityForm(props) {
-  const [quantity, setQuantity] = useState();
+type Props = {
+  productId: number;
+};
+export default function ProductQuantityForm(props: Props) {
+  const [quantity, setQuantity] = useState(0);
   const router = useRouter();
 
   return (
@@ -17,7 +18,7 @@ export default function ProductQuantityForm(props) {
         min="1"
         value={quantity}
         onChange={(event) => {
-          setQuantity(event.currentTarget.value);
+          setQuantity(Number(event.currentTarget.value));
         }}
       />
       <br />

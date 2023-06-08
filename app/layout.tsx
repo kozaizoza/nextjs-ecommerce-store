@@ -12,8 +12,10 @@ export const metadata = {
   description:
     'We believe in transforming the art of floral design into a captivating experience that goes beyond traditional bouquets.',
 };
-
-export default function RootLayout({ children }) {
+type LayoutProps = {
+  children: string;
+};
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className={inter.className}>

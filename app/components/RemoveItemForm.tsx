@@ -2,7 +2,11 @@
 import { useRouter } from 'next/navigation';
 import { removeItem } from '../products/[productId]/actions';
 
-export default function RemoveItem({ product }) {
+type Props = {
+  product: number;
+}
+
+export default function RemoveItem(props: Props ) {
   const router = useRouter();
 
   return (
@@ -10,7 +14,7 @@ export default function RemoveItem({ product }) {
       <button
         formAction={async () => {
           router.refresh();
-          await removeItem(product);
+          await removeItem(props.product);
         }}
       >
         {' '}

@@ -1,7 +1,7 @@
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
-export default function CartNumberProduct() {
+export default function ProductQuantityNumber() {
   const productQuantityCookie = getCookie('cart');
   const productQuantities = !productQuantityCookie
     ? []
