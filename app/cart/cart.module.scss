@@ -1,0 +1,35 @@
+.productsInfoRow {
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.productPicture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.removeButton {
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.totalPrice {
+  padding-top: 70px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.empyCart {
+  text-align: center;
+  padding: 70px;
+}

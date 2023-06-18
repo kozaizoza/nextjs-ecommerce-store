@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { getProductById } from '../../database/products';
 import { getQuantity } from '../products/[productId]/actions';
 import RemoveItem from '../components/RemoveItemForm';
+import style from './cart.module.scss';
 
 export default async function CartPage() {
   const productQuantity = await getQuantity();
@@ -21,7 +22,7 @@ export default async function CartPage() {
     return (
       <main>
         <section>
-          <div>✿Your cart is empty.</div>
+          <div className={style.empyCart}>✿ Your cart is empty. ✿</div>
         </section>
       </main>
     );
@@ -39,24 +40,33 @@ export default async function CartPage() {
         {productInCart.map((product) => {
           console.log(product);
           return (
-            <div key={`product-${product.id}`}>
+            <div
+              className={style.productsInfoRow}
+              key={`product-${product.id}`}
+            >
               <Image
+                className={style.productPicture}
                 alt=""
                 src={`/images/${product.name}.jpg`}
-                width={150}
-                height={200}
+                width={70}
+                height={100}
               />
               <div>{product.name}</div>
-              <div>{product.price} </div>
               <div>Quantity: {product.quantity}</div>
+              <div>Price: {product.price} </div>
 
-              <form data-test-id="cart-product-remove-<product id>">
+              <form
+                data-test-id="cart-product-remove-<product id>"
+                className={style.removeButton}
+              >
                 <RemoveItem product={product} />
               </form>
             </div>
           );
         })}
-        <div data-test-id="cart-total">Total Price: {totalPrice} </div>
+        <div data-test-id="cart-total" className={style.totalPrice}>
+          Total Price: {totalPrice}{' '}
+        </div>
       </section>
     </main>
   );
